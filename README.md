@@ -5,6 +5,6 @@
 #### install 
 srctop requires go1.21 to install successfully. Run the following command to install the latest version:
 ```
-  go install github.com/Baiqll/srctop/cmd/srctop@latest
+  go install github.com/baiqll/srctop/cmd/srctop@latest
 
 ```
