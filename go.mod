@@ -1,6 +1,6 @@
 module github.com/baiqll/srctop
 
-go 1.22.2
+go 1.21
 
 require (
     github.com/mattn/go-runewidth v0.0.15
