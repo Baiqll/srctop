@@ -2,37 +2,11 @@ package runner
 
 import (
 	"fmt"
-	"math"
 	"os"
-	"regexp"
 	"strings"
 	"time"
 	"unicode/utf8"
 )
-
-func AlignLeft(str string, width int) string {
-
-	str = ShortenString(str, 20)
-
-	re := regexp.MustCompile(`[\p{Han}]+`)
-
-	// 找出所有匹配的中文字符串
-	matches := re.FindAllString(str, -1)
-
-	if matches != nil {
-
-		zh_char := utf8.RuneCountInString(matches[0])
-		en_char := utf8.RuneCountInString(str) - zh_char
-
-		real_width := int(math.Round(float64(zh_char) / 0.6111))
-
-		return fmt.Sprintf("%s%s", str, strings.Repeat(" ", width-en_char-real_width))
-
-	}
-
-	return fmt.Sprintf("%s%s", str, strings.Repeat(" ", width-len(str)))
-
-}
 
 func ShortenString(s string, maxLen int) string {
 	if utf8.RuneCountInString(s) > maxLen {
